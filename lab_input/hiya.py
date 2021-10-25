@@ -10,6 +10,6 @@ def main():
     user_input = input("Please enter your name:")
     
     # display the input back to the user.
-    print("Hello " + user_input +"! Happy " + Day +"!" )
+    print(f"Hello {user_input} ! Happy {Day}!" )
 
 main()

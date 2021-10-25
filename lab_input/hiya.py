@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import datetime
 
 # below is a function containing our code

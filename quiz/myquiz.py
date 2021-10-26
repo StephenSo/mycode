@@ -26,24 +26,26 @@ def main():
         }
     # Now using the value pair, read the appropriate text file containing the synopsis        
     for count,value in enumerate(books):
-        books[value] =  (open((books[value]), "r")).read()
+        books[value] =  (open((books[value]), "r")).read() # over write the paired values
+                                                           # with the synopsis read from a file.
 
-    user_selection = 0
-    while user_selection < 1 or user_selection > count+1:
-        for count,value in enumerate(books):
-            print(f"{count+1}: {value}")
-        #not isinstance(user_selection, int)) : 
+    user_selection = 0 # set up invalid value for user_selection
+    while user_selection < 1 or user_selection > count+1: # ensure the valid values match the number of books
+        
+        for count,value in enumerate(books): # Display the list of know books
+            print(f"{count+1}: {value}") # print the list of books with a counter.
         try:
             user_selection = int(input(f"Select a movie number in the range 1-{count+1}:"))
-        except ValueError:
+        except ValueError: # If user entered something other than a number
             print("Please enter a valid number")
             user_selection = 0 
     
     print("\n\nHere is your synopsis:\n")
+    
     for count,value in enumerate(books):
         if count+1 == user_selection:
-            print(f"{value}\n")
-            print(f"{books[value]}")
+            print(f"{value}\n") #  print the book name
+            print(f"{books[value]}") # print the synopsis
             break
         
 main()

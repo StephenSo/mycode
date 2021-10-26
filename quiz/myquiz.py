@@ -8,7 +8,7 @@ import os
 #Indiana Jones
 
 def main():
-    print("Synopses of the following books are available.")
+    print("Synopses of the following books are available to read.")
 
     # Get current script folder
     WorkDir = os.getcwd()
@@ -47,5 +47,7 @@ def main():
             print(f"{value}\n") #  print the book name
             print(f"{books[value]}") # print the synopsis
             break
-        
+
+    print("\n") # Create a clean line before returning
+
 main()

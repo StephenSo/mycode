@@ -8,7 +8,7 @@ def main():
     WorkDir = os.getcwd()
 
     # Set current working directory
-    #os.chdir("V:/PythonCourseRepo/mycode/")
+    os.chdir(WorkDir)
 
     # Copy file sdn_network.txt file to sdn_network.txt.copy
     shutil.copy("5g_research/sdn_network.txt", "5g_research/sdn_network.txt.copy")

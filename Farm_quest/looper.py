@@ -10,13 +10,14 @@ def main():
                                                                       # what does B.P say?
 
     def get_agriculture(farm):
-        print(f"\n In the {farm['name']} the animals to be found are:")
+        print(f"\nIn the {farm['name']} the animals to be found are:")
+        found_animal = False
         for item in farm['agriculture']:
             if item in animals:
                 found_animal = True
                 print(f" - {item}")
-            if not found_animal:
-                print("There are no animals in this farm")
+        if not found_animal:
+            print("There are no animals in this farm")
 
     def get_farm(farms):
         user_selection = 0 # set up invalid value for user_selection

@@ -9,14 +9,15 @@ def main():
     animals = ["sheep", "cows", "pigs", "chickens", "llamas", "cats"] # could go inside get_agriculture()
                                                                       # what does B.P say?
 
-    def get_agriculture(farm):
+    def get_agriculture(farm): # farm is a farm object ('name',[agriculture])
         print(f"\nIn the {farm['name']} the animals to be found are:")
-        found_animal = False
-        for item in farm['agriculture']:
-            if item in animals:
-                found_animal = True
-                print(f" - {item}")
-        if not found_animal:
+        found_animal = False  # we have not got a match yet
+        for item in farm['agriculture']: # loop through the agri' list in farm as 'item'
+            if item in animals: # is the item in the animals list?
+                found_animal = True # we have found an animal
+                print(f" - {item}") # print the item
+        
+        if not found_animal: # no animals found in this farm
             print("There are no animals in this farm")
 
     def get_farm(farms):
@@ -33,6 +34,7 @@ def main():
         
         return farms[user_selection-1]
 
-    get_agriculture(get_farm(farms))
+    get_agriculture(get_farm(farms)) # get user to select a farm from the farms list
+                                     # get the argi' in the selected farm
 
 main()

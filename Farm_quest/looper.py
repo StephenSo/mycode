@@ -22,7 +22,7 @@ def main():
 
     def get_farm(farms):
         user_selection = 0 # set up invalid value for user_selection
-        while user_selection < 1 or user_selection > len(farms): # ensure the valid values match the number of books
+        while user_selection < 1 or user_selection > len(farms): # ensure the valid values match the number of farms
             
             for count,value in enumerate(farms): # Display the list of known farms
                 print(f"{count+1}: {value['name']}") # print the list of farms with a counter.
@@ -32,7 +32,7 @@ def main():
                 print("Please enter a valid number")
                 user_selection = 0 
         
-        return farms[user_selection-1]
+        return farms[user_selection-1] # user-selection -1 because list starts at 0
 
     get_agriculture(get_farm(farms)) # get user to select a farm from the farms list
                                      # get the argi' in the selected farm

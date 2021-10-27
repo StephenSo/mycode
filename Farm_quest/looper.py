@@ -6,10 +6,14 @@ def main():
             {"name": "E Farm", "agriculture": ["bananas", "apples", "oranges"]},
             {"name": "W Farm", "agriculture": ["pigs", "chickens", "llamas"]}]
 
+    animals = ["sheep", "cows", "pigs", "chickens", "llamas", "cats"] # could go inside get_agriculture()
+                                                                      # what does B.P say?
+
     def get_agriculture(farm):
-        print(f"\n In the {farm['name']} there are:")
+        print(f"\n In the {farm['name']} the animals to be found are:")
         for item in farm['agriculture']:
-            print(f" - {item}")
+            if item in animals:
+                print(f" - {item}")
 
     def get_farm(farms):
         user_selection = 0 # set up invalid value for user_selection

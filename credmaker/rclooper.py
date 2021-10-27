@@ -12,7 +12,7 @@ with open(f"{WorkDir}/credmaker/csv_users.txt", "r") as csvfile:
     # counter to create unique file names
     i = 0
     # loop across our open file line by line
-    for row in csv.reader(csvfile):
+    for row in csv.DictReader(csvfile):
         i = i + 1 # increase i by 1 (to create unique admin.rc file names)
         filename = f"{WorkDir}/credmaker/admin.rc{i}" # this f string says "fill in the value of i"
 
@@ -20,13 +20,15 @@ with open(f"{WorkDir}/credmaker/csv_users.txt", "r") as csvfile:
         with open(filename, "w") as rcfile:
             # use the standard library print function to print our data
             # out to the open file open rcfile (open in write mode)
-            print("export OS_AUTH_URL=" + row[0], file=rcfile)
+            # Headers
+            # authurl,projectname,domainname,username,userdomainname,password
+            print("export OS_AUTH_URL=" + row['authurl'], file=rcfile)
             print("export OS_IDENTITY_API_VERSION=3", file=rcfile)
-            print("export OS_PROJECT_NAME=" + row[1], file=rcfile)
-            print("export OS_PROJECT_DOMAIN_NAME=" + row[2], file=rcfile)
-            print("export OS_USERNAME=" + row[3], file=rcfile)
-            print("export OS_USER_DOMAIN_NAME=" + row[4], file=rcfile)
-            print("export OS_PASSWORD=" + row[5], file=rcfile)
+            print("export OS_PROJECT_NAME=" + row['projectname'], file=rcfile)
+            print("export OS_PROJECT_DOMAIN_NAME=" + row['domainname'], file=rcfile)
+            print("export OS_USERNAME=" + row['username'], file=rcfile)
+            print("export OS_USER_DOMAIN_NAME=" + row['userdomainname'], file=rcfile)
+            print("export OS_PASSWORD=" + row['password'], file=rcfile)
 
 # all of the indentation ends, so all files are auto closed
 

@@ -1,3 +1,4 @@
+authurl,projectname,domainname,username,userdomainname,password
 http://controller:35357/v2/,myproject1,default,alice,default,alta1
 http://controller:35357/v2/,myproject2,default,bob,default,alta2
 http://controller:35357/v2/,myproject3,default,charlie,default,alta3

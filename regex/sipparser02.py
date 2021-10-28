@@ -8,15 +8,15 @@ file_name = "networktrace.txt"
 webdata = "https://static.alta3.com/files/networktrace.txt"
 
 def save_webdata(url,path):
-    resp = requests.get(url)
+    resp = requests.get(url) # GET data from given URL
     with open(path, "w") as text:
-        text.write(resp.text)
+        text.write(resp.text) # Save the data to the given PATH 
     return resp
 
 def main():
-    full_path = f"{WorkDir}{file_name}"
-    #Grab the text from a URL
-    save_webdata(webdata,full_path)
+    full_path = f"{WorkDir}{file_name}" # Create full path (folders\filename)
+    #Grab the text from a URL and save to local disk
+    save_webdata(webdata,full_path) 
 
     # open the networktrace (text format)
     with open(full_path) as trace:

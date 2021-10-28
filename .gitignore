@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 strings/stringmethod02.py
-scratch.py
+#scratch.py

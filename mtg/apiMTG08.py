@@ -15,7 +15,7 @@ from random import randint
 # Define our "base" API
 API = "https://api.magicthegathering.io/v1/" # this will never change regardless of the lookup we perform
 # Get current folder
-WorkDir = f"{os.getcwd()}\mtg\"
+WorkDir = f"{os.getcwd()}\\mtg\\"
 
 def main():
     """Run time code"""

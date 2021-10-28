@@ -32,3 +32,12 @@ def main():
     print("Results: ", find(lookfor, lookwhere)) # call function
 
 main()
+
+
+"""
+for rootpath, dirlist, filelist in os.walk(startpath):
+    filelist[:] = [f for f in filelist if f[0] != '.']
+    dirlist[:] = [d for d in dirlist if d[0] != '.']
+    for x in filelist:
+        print(os.path.join(rootpath, x))
+"""
